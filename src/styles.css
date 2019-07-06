@@ -1243,7 +1243,6 @@ select:focus {
   text-align: center;
   line-height: 80px;
   border-radius: 3px;
-  color: #fff;
   position: relative;
   margin-bottom: 16px; }
 .about .box .inner-box .icon::after {
@@ -1251,8 +1250,8 @@ select:focus {
   content: " ";
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 70%;
+  height: 70%;
   border-radius: 3px;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
@@ -1567,7 +1566,6 @@ select:focus {
   text-align: center;
   line-height: 90px;
   border-radius: 3px;
-  color: #fff;
   position: relative;
   margin-bottom: 17px; }
 .service .service-box .icon::after {
@@ -1852,7 +1850,6 @@ select:focus {
   text-align: center;
   line-height: 80px;
   border-radius: 3px;
-  color: #fff;
   position: relative;
   margin-bottom: 22px; }
 .counter-area .fun-box .icon::after {
@@ -3059,7 +3056,6 @@ select:focus {
   text-align: center;
   line-height: 55px;
   border-radius: 3px;
-  color: #fff;
   position: relative;
   margin-bottom: 16px; }
 .contact .info-contact li .info-box .left .icon::after {
