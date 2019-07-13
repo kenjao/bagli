@@ -1226,7 +1226,7 @@ select:focus {
   position: relative;
   z-index: 99;
   padding: 43px 25px 21px;
-  border: 2px solid rgba(249, 135, 6, 0.15);
+  border: 2px solid rgba(249, 135, 6, 0.70);
   -webkit-transition: 0.3s ease-in;
   -moz-transition: 0.3s ease-in;
   -o-transition: 0.3s ease-in;
