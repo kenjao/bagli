@@ -155,7 +155,7 @@
 }
 
 @media only screen and (max-width: 991px) {
-    
+
     .navbar-light .navbar-toggler {
         border: 0px;
         padding: 0px;
@@ -172,7 +172,7 @@
     .navigation .navbar .navbar-brand {
         margin-top: -3px;
     }
-    
+
     .navigation .navbar #mainmenu ul li a {
         padding: 10px 10px 10px!important;
         display: inline-block;
@@ -229,6 +229,7 @@
     .counter-area .fun-box .icon,
     .about .box .inner-box .icon
      {
+        color: #f37508;
         font-size: 35px;
         width: 80px;
         height: 80px;
@@ -281,7 +282,7 @@
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
- 
+
     .hero-area .left-content .content .title {
         font-size: 50px;
         line-height: 60px;
@@ -290,6 +291,7 @@
         padding: 110px 0px 120px;
     }
     .about .box .inner-box .icon {
+        color: #f37508;
         width: 90px;
         height: 90px;
         line-height: 90px;
@@ -333,7 +335,7 @@
         right: 50px;
         top: 32%;
     }
-   
+
 }
 
 
@@ -459,7 +461,7 @@
     .testimonial-area .section-title {
         margin-bottom: 35px;
     }
- 
+
     .hero-area .heroarea-slider.owl-carousel .owl-controls .owl-nav .owl-prev, .hero-area .heroarea-slider.owl-carousel .owl-controls .owl-nav .owl-next {
         font-size: 16px;
         width: 35px;
@@ -653,7 +655,7 @@
         width: 300%;
         max-width: 300%;
     }
-   
+
 }
 
 @media only screen and (max-width: 500px) {
@@ -667,7 +669,7 @@
         width: 300%;
         max-width: 300%;
     }
-   
+
 }
 
 @media only screen and (max-width: 450px) {
@@ -800,11 +802,11 @@
         padding: 12px 25px;
     }
 
-   
 
 
 
- 
+
+
 }
 
 
@@ -868,5 +870,5 @@
 
 @media only screen and (max-width: 330px) {
 
-  
+
 }
