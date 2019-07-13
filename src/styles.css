@@ -1147,7 +1147,7 @@ select:focus {
   padding: 119px 0px 120px;
   position: relative;
   overflow: hidden;
-  background-color : #F7F8FC;}
+  background-color : #90efff;}
 .about .shape {
   position: absolute;
   bottom: 0px;
@@ -1222,17 +1222,17 @@ select:focus {
 .about .box .inner-box {
   width: 100%;
   height: 100%;
-  background: #fff;
+  background: rgb(255, 255, 255);;
   position: relative;
   z-index: 99;
   padding: 43px 25px 21px;
-  border: 2px solid rgba(0, 0, 0, 0.07);
+  border: 2px solid rgba(249, 135, 6, 0.15);
   -webkit-transition: 0.3s ease-in;
   -moz-transition: 0.3s ease-in;
   -o-transition: 0.3s ease-in;
   transition: 0.3s ease-in; }
 .about .box .inner-box .icon {
-  color: #111344;
+  color: #f37508;
   font-size: 40px;
   background-image: -moz-linear-gradient(55deg, #14213D 0%, #14213D);
   background-image: -webkit-linear-gradient(55deg, #14213D 0%, #14213D);
@@ -3142,8 +3142,7 @@ select:focus {
 .social-media-links {
 
   overflow: hidden;
-  position: relative;
-  background: #fff; }
+  position: relative;}
 .social-media-links .footer-info-area .footer-logo {
   margin-bottom: 23px;
   display: block; }
@@ -4866,3 +4865,6 @@ select:focus {
   background-image: linear-gradient(to right, #fc4a1a, #f7b733);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; }
+body {
+  background-color: #ffefdf !important;
+}

@@ -14,7 +14,7 @@
 #home {
   background-color: rgba(0, 0, 0, 0);
   background-repeat: no-repeat;
-  background-image: url(/assets/images/background/bg2.jpg);
+  background-image: url(/assets/images/background/bg.jpg);
   background-size: cover;
   background-position: center center;
   width: 100%;
@@ -30,8 +30,10 @@
   background-color: rgba(0, 0, 0, 0.51);
 }
 
+
 .card {
-  box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.15);
+  /*background: #d5f8fc;*/
 }
 
 .orange{

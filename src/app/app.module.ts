@@ -8,14 +8,14 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     SharedModule,
-    AlertModule.forRoot({maxMessages: 1, timeout: 5000}),
+    AlertModule.forRoot({maxMessages: 1, timeout: 5000})
   ],
   providers: [],
   bootstrap: [AppComponent]
