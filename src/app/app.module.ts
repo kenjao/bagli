@@ -5,10 +5,12 @@ import {AlertModule} from "ngx-alerts";
 import {SharedModule} from "./home/shared/shared.module";
 import {AppRoutingModule} from "./app-routing.module";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { BookingComponent } from './home/booking/booking.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    BookingComponent,
   ],
   imports: [
     BrowserModule,

@@ -37,12 +37,14 @@ import {
   MatTooltipModule,
 } from '@angular/material';
 import {CdkTableModule} from '@angular/cdk/table';
+import { BrowserModule } from '@angular/platform-browser';
 
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
+    BrowserModule,
     ReactiveFormsModule,
     RouterModule,
     CdkTableModule,
@@ -82,6 +84,7 @@ import {CdkTableModule} from '@angular/cdk/table';
   exports: [
     CommonModule,
     FormsModule,
+    BrowserModule,
     ReactiveFormsModule,
     RouterModule,
     CdkTableModule,
