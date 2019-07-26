@@ -1,5 +1,7 @@
-import { Component, OnInit} from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {isNullOrUndefined} from "util";
+import {StripeCheckoutHandler, StripeCheckoutLoader} from "ng-stripe-checkout";
+import {environment} from "../../../environments/environment";
 
 @Component({
   selector: 'app-booking',
