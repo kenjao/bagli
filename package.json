@@ -32,7 +32,8 @@
     "ngx-alerts": "3.0.0",
     "ngx-bootstrap": "3.0.1",
     "rxjs": "6.0.0",
-    "zone.js": "0.8.26"
+    "zone.js": "0.8.26",
+    "ng-stripe-checkout": "1.0.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "0.7.0",

@@ -1,12 +1,12 @@
-import { Component, OnInit, ViewChild, ChangeDetectorRef, ElementRef, AfterViewInit , OnDestroy} from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Component, OnInit} from '@angular/core';
+import {isNullOrUndefined} from "util";
 
 @Component({
   selector: 'app-booking',
   templateUrl: './booking.component.html',
   styleUrls: ['./booking.component.css']
 })
-export class BookingComponent implements OnInit, OnDestroy , AfterViewInit {
+export class BookingComponent implements OnInit {
 
   fullname: string;
   phonenumber: string;
@@ -14,56 +14,68 @@ export class BookingComponent implements OnInit, OnDestroy , AfterViewInit {
   dropOffTime = '9';
   dropOffMeridian = 'AM';
   enablePayment = false;
+  amount = 100;
+  stripeCheckoutHandler: StripeCheckoutHandler;
 
-  @ViewChild('cardInfo') cardInfo: ElementRef;
 
-  card: any;
-  cardHandler = this.onChange.bind(this);
-  error: string;
-  constructor(private cd: ChangeDetectorRef) { }
+  constructor(private stripeCheckoutLoader: StripeCheckoutLoader) { }
 
 
   ngOnInit() {
   }
 
   submitBooking() {
-      if(confirm("Confirm you want to proceed")) {
+      if (confirm("Confirm you want to proceed")) {
         this.enablePayment = true;
+        this.openToMakePayment();
       }
   }
 
-  ngAfterViewInit() {
-    this.card = elements.create('card');
-    this.card.mount(this.cardInfo.nativeElement);
-
-    this.card.addEventListener('change', this.cardHandler);
+  public setupPayment() {
+    this.stripeCheckoutLoader.createHandler({
+      key: environment.pkey,
+      image: 'assets/images/logo/bagli-logo.png',
+      token: (token) => {
+        // Do something with the token...
+        console.log('Charge request!', JSON.stringify(token));
+        this.makePayment(token);
+      }
+    }).then((handler: StripeCheckoutHandler) => {
+      this.stripeCheckoutHandler = handler;
+    });
   }
 
-  ngOnDestroy() {
-    this.card.removeEventListener('change', this.cardHandler);
-    this.card.destroy();
-  }
+  public openToMakePayment() {
 
-  onChange({ error }) {
-    if (error) {
-      this.error = error.message;
-    } else {
-      this.error = null;
+    if(isNullOrUndefined(this.stripeCheckoutHandler)) {
+      this.setupPayment();
+      return;
     }
-    this.cd.detectChanges();
+    this.stripeCheckoutHandler.open({
+      name: this.fullname,
+      email: this.email,
+      amount: this.amount * 100,
+      currency: 'USD',
+    });
   }
 
-  async onSubmit(form: NgForm) {
-    const { token, error } = await stripe.createToken(this.card);
-
-    if (error) {
-      alert('Something is wrong:');
-    } else {
-      alert('All set to process transaction!');
-      // ...send the token to the your backend to process the charge
-    }
+  public onClickCancel() {
+    // If the window has been opened, this is how you can close it:
+    this.stripeCheckoutHandler.close();
   }
 
- 
+  @HostListener('window:popstate')
+  onPopstate() {
+    this.stripeCheckoutHandler.close();
+  }
+
+
+  makePayment(token: any) {
+    // alert("Payment called \n " + JSON.stringify(token));
+    alert("Card ready to be debited!");
+
+  }
+
+
 
 }
