@@ -3,7 +3,6 @@ import { SharedModule } from '../shared/shared.module';
 import {LandingComponent} from './landing.component';
 import {LandingRoutingModule} from './landing-routing.module';
 import {CarouselModule} from "ngx-bootstrap";
-import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -12,8 +11,7 @@ import {FormsModule} from "@angular/forms";
   imports: [
     SharedModule,
     LandingRoutingModule,
-    CarouselModule,
-    FormsModule
+    CarouselModule
   ],
   providers: [],
 })

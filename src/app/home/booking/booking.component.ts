@@ -13,8 +13,8 @@ export class BookingComponent implements OnInit {
   fullname: string;
   phonenumber: string;
   email: string;
-  dropOffTime = '9';
-  dropOffMeridian = 'AM';
+  dropOffTime;
+  dropOffMeridian;
   enablePayment = false;
   amount = 100;
   stripeCheckoutHandler: StripeCheckoutHandler;
