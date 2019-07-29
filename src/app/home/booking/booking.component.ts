@@ -2,6 +2,7 @@ import {Component, HostListener, OnInit} from '@angular/core';
 import {isNullOrUndefined} from "util";
 import {StripeCheckoutHandler, StripeCheckoutLoader} from "ng-stripe-checkout";
 import {environment} from "../../../environments/environment";
+import {BookingService} from "./booking.service";
 
 @Component({
   selector: 'app-booking',
@@ -20,7 +21,7 @@ export class BookingComponent implements OnInit {
   stripeCheckoutHandler: StripeCheckoutHandler;
 
 
-  constructor(private stripeCheckoutLoader: StripeCheckoutLoader) { }
+  constructor(private stripeCheckoutLoader: StripeCheckoutLoader, private bookingService: BookingService) { }
 
 
   ngOnInit() {
@@ -39,8 +40,8 @@ export class BookingComponent implements OnInit {
       image: 'assets/images/logo/bagli-logo.png',
       token: (token) => {
         // Do something with the token...
-        console.log('Charge request!', JSON.stringify(token));
-        this.makePayment(token);
+        console.log('Charge request!', JSON.stringify(token.id));
+        this.makePayment(token.id);
       }
     }).then((handler: StripeCheckoutHandler) => {
       this.stripeCheckoutHandler = handler;
@@ -74,7 +75,13 @@ export class BookingComponent implements OnInit {
 
   makePayment(token: any) {
     // alert("Payment called \n " + JSON.stringify(token));
-    alert("Card ready to be debited!");
+    console.log(token);
+    this.bookingService.charge(token).subscribe(response => {
+      console.log(JSON.stringify(response));
+      alert("Successful");
+    }, err => {
+      alert(JSON.stringify(err.error.error.message));
+    });
 
   }
 

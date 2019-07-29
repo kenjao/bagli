@@ -37,7 +37,7 @@ import {
   MatTooltipModule,
 } from '@angular/material';
 import {CdkTableModule} from '@angular/cdk/table';
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -78,7 +78,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     MatTableModule,
     MatTabsModule,
     MatToolbarModule,
-    MatTooltipModule
+    MatTooltipModule,
+    HttpClientModule
   ],
   exports: [
     CommonModule,
@@ -117,7 +118,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     MatTableModule,
     MatTabsModule,
     MatToolbarModule,
-    MatTooltipModule
+    MatTooltipModule,
+    HttpClientModule
   ],
   declarations: [
 
