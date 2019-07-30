@@ -11,6 +11,7 @@ import {BookingService} from "./booking.service";
 })
 export class BookingComponent implements OnInit {
 
+  dropOffLocation;
   fullname: string;
   phonenumber: string;
   email: string;

@@ -4,6 +4,11 @@
         <h1 class="center">Booking Request</h1>
         <form method="POST" #bookForm="ngForm" (ngSubmit)="submitBooking()">
             <mat-form-field class="w-100">
+                <mat-select placeholder="Drop off location" required name="dropOffLocation" id="dropOffLocation" [(ngModel)]="dropOffLocation" #formdropoffLocation="ngModel">
+                    <mat-option value="City Soles">City Soles - 1630 N Milwaukee Ave, Chicago, IL 60647</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field class="w-100">
                 <input matInput placeholder="Enter fullname" required name="fullname" id="fullname" [(ngModel)]="fullname" #formFullname="ngModel">
             </mat-form-field>
             <mat-form-field class="w-100">
@@ -15,12 +20,13 @@
             <mat-form-field class="w-100">
                 <mat-select placeholder="Drop off time" required name="dropOffTime" id="dropOffTime" [(ngModel)]="dropOffTime" #formdropofftime="ngModel">
                     <mat-option value="1">1</mat-option> <mat-option value="2">2</mat-option> <mat-option value="3">3</mat-option> <mat-option value="4">4</mat-option> <mat-option value="5">5</mat-option> <mat-option value="6">6</mat-option>
-                    <mat-option value="7">7</mat-option> <mat-option value="8">8</mat-option> <mat-option value="9">9</mat-option> <mat-option value="10">10</mat-option> <mat-option value="11">11</mat-option> <mat-option value="12">12</mat-option>
+                    <!-- <mat-option value="7">7</mat-option> <mat-option value="8">8</mat-option> <mat-option value="9">9</mat-option> <mat-option value="10">10</mat-option> <mat-option value="11">11</mat-option> -->
+                        <mat-option value="12">12</mat-option>
                 </mat-select>
             </mat-form-field>
             <mat-form-field class="w-100">
                 <mat-select placeholder="AM/PM"  required name="dropOffMeridian" id="dropOffMeridian" [(ngModel)]="dropOffMeridian" #formdropoffmeridian="ngModel">
-                    <mat-option value="AM">AM</mat-option>
+                    <!-- <mat-option value="AM">AM</mat-option> -->
                     <mat-option value="PM">PM</mat-option>
                 </mat-select>
             </mat-form-field>
